@@ -1,0 +1,183 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Macroz</title>
+	
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+var g = "g";
+	calsField = parseInt($('input[name="Cals"]').val());
+	startCalsField = calsField;
+    $('input[name="Cals"]').val(startCalsField);
+	
+var	fatsField = parseInt($('input[name="Fats"]').val());
+    startFatsField = fatsField;
+    $('input[name="Fats"]').val(startFatsField);
+	
+var	carbsField = parseInt($('input[name="Carbs"]').val());
+    startCarbsField = carbsField;
+    $('input[name="Carbs"]').val(startCarbsField);
+	
+var	proteinField = parseInt($('input[name="Protein"]').val());
+    startProteinField = proteinField;
+    $('input[name="Protein"]').val(startProteinField);
+});
+
+function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
+</script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="page1">
+    <header data-role="header" ><h1>Macroz</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
+                <li><a href="#page2" data-icon="gear" data-theme="b">UPDATE GOALS</a></li>
+                <li><a href="#page3" data-icon="plus" data-theme="b">ADD MACROZ </a></li>
+            </ul>
+        </div>
+    </header>
+
+<div data-role="content"></br>
+	
+	<p>Calories: <input type="Text" name="Cals" value="2000"></p>
+	<p>Fats: <input type="Text" name="Fats" value="44g"></p>
+	<p>Carbs: <input type="Text" name="Carbs" value="250g"></p>
+	<p>Protein: <input type="Text" name="Protein" value="150g"></p>	
+
+</div>
+
+    <footer data-role="footer" class="ui-bar">
+        	<h4> Copyright 2014	</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="page2">
+
+<script>
+$(document).ready(function(){
+  $("#Update").click(function(){  
+  
+    var calsField = parseInt($('input[name="addCals"]').val());
+        updateCalsField = calsField;
+        $('input[name="Cals"]').val(updateCalsField); 
+		
+		fatsField = parseInt($('input[name="addFats"]').val());
+        updateFatsField = fatsField + "g";
+        $('input[name="Fats"]').val(updateFatsField); 
+		
+		carbsField = parseInt($('input[name="addCarbs"]').val());
+        updateCarbsField = carbsField + "g";
+        $('input[name="Carbs"]').val(updateCarbsField); 
+		
+		proteinField = parseInt($('input[name="addProtein"]').val());
+        updateProteinField = proteinField + "g";
+        $('input[name="Protein"]').val(updateProteinField); 
+  
+	
+	alert("Calories Updated to  " + $('input[name="Cals"]').val() + 
+	"\n\nFats Updated to  " + $('input[name="Fats"]').val() + 
+	"\nCarbs Updated to  " + $('input[name="Carbs"]').val() + 
+	"\nProtein Updated to  " + $('input[name="Protein"]').val()
+	); 
+  });
+});
+</script>
+
+    <header data-role="header">
+         <h1>Macroz</h1>
+    <div data-role="navbar">
+        <ul>
+             <li><a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
+             <li><a href="#page2" data-icon="gear" data-theme="e">UPDATE GOALS </a></li>
+             <li><a href="#page3" data-icon="plus" data-theme="b">ADD MACROZ </a></ul>
+    </div>
+    </header>
+	
+    <div data-role="content"></br>
+	<p>Calories: <input type="text" name="addCals"></p>
+	<p>Fats: <input type="text" name="addFats"></p>
+	<p>Carbs: <input type="text" name="addCarbs"></p>
+	<p>Protein: <input type="text" name="addProtein"></p>
+
+	<button id="Update" onclick="vibrate(); return false;"> Update Goals </button>
+
+	</div>
+    <footer data-role="footer" class="ui-bar">
+        	<h4> Copyright 2014 </h4>
+    </footer>
+</div>
+
+<div data-role="page" id="page3">
+
+<script>
+$(document).ready(function(){
+  $("#Add").click(function(){  
+  
+    var calsField = parseInt($('input[name="newCals"]').val());
+        addCalsField = $('input[name="Cals"]').val() - calsField;
+        $('input[name="Cals"]').val(addCalsField); 
+		
+		fatsField = parseInt($('input[name="newFats"]').val());
+        addFatsField = $('input[name="Fats"]').val() - fatsField; //fatsField + "g";
+        $('input[name="Fats"]').val(addFatsField); 
+		
+		carbsField = parseInt($('input[name="newCarbs"]').val());
+        addCarbsField = $('input[name="Carbs"]').val() - carbsField; //carbsField + "g";
+        $('input[name="Carbs"]').val(addCarbsField); 
+		
+		proteinField = parseInt($('input[name="newProtein"]').val());
+        addProteinField = $('input[name="Protein"]').val() - proteinField; //proteinField + "g";
+        $('input[name="Protein"]').val(addProteinField); 
+  
+	
+	alert("Calories Updated to  " + $('input[name="Cals"]').val() + 
+	"\n\nFats Updated to  " + $('input[name="Fats"]').val() + 
+	"\nCarbs Updated to  " + $('input[name="Carbs"]').val() + 
+	"\nProtein Updated to  " + $('input[name="Protein"]').val()
+	); 
+  });
+});
+</script>
+
+    <header data-role="header">
+         <h1>Macroz</h1>
+    <div data-role="navbar">
+        <ul>
+             <li><a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
+             <li><a href="#page2" data-icon="gear" data-theme="b">UPDATE GOALS </a></li>
+             <li><a href="#page3" data-icon="plus" data-theme="e">ADD MACROZ </a></ul>
+    </div>
+    </header>	
+	
+    <div data-role="content"></br>
+	<p>Calories: <input type="text" name="newCals"></p>
+	<p>Fats: <input type="text" name="newFats"></p>
+	<p>Carbs: <input type="text" name="newCarbs"></p>
+	<p>Protein: <input type="text" name="newProtein"></p>
+
+	<button id="Add" onclick="vibrate(); return false;"> Add Macroz </button>
+
+	</div>
+    <footer data-role="footer" class="ui-bar">
+        	<h4> Copyright 2014 </h4>
+
+    </footer>
+</div>
+
+</body>
+</html>
