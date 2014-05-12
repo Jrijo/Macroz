@@ -14,11 +14,10 @@
 <script>
 $(document).ready(function(){
 var g = "g";
-
 	$("#Cals").text("2,000");
-	$("#Fats").text("100g");
-	$("#Carbs").text("50g");
-	$("#Protein").text("160g");
+	$("#Fats").text("100");
+	$("#Carbs").text("50");
+	$("#Protein").text("160");
 });
 </script>
 
@@ -30,32 +29,19 @@ var g = "g";
     <header data-role="header" ><h1>Macroz</h1>
         <div data-role="navbar">
             <ul>
-                <li>	<a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a>
-
-                </li>
-                <li>	<a href="#page2" data-icon="gear" data-theme="b"> UPDATE GOALS </a>
-
-                </li>
-                <li>	<a href="#page3" data-icon="plus" data-theme="b"> ADD MACROZ </a>
-
-                </li>
+                <li><a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
+                <li><a href="#page2" data-icon="gear" data-theme="b">UPDATE GOALS</a></li>
+                <li><a href="#page3" data-icon="plus" data-theme="b">ADD MACROZ </a></li>
             </ul>
         </div>
     </header>
 
 <div data-role="content"></br>
 	
-	<!--<b>Remaining</b></br></br>
-	Calories: <p id="Cals"> </p>
-	Fats: <p id="Fats"> </p>
-	Carbs: <p id="Carbs"> </p>
-	Protein: <p id="Protein"> </p>-->
-	
 	<p>Calories: <input type="Text" id="Cals" value="2,264"></p>
 	<p>Fats: <input type="Text" id="Fats" value="126g"></p>
 	<p>Carbs: <input type="Text" id="Carbs" value="113g"></p>
 	<p>Protein: <input type="Text" id="Protein" value="170g"></p>	
-
 
 </div>
 
@@ -74,15 +60,12 @@ $(document).ready(function(){
 	$("#Carbs").val($("#addCarbs").val());
 	$("#Protein").val($("#addProtein").val());
 	
-	alert("Calories Updated to " + $("#addCals").val() + 
-	"\nFats Updated to " + $("#addFats").val() + 
-	"\nCarbs Updated to " + $("#addCarbs").val() + 
-	"\nProtein Updated to " + $("#addProtein").val()
+	alert("Calories Updated to  " + $("#addCals").val() + 
+	"\n\nFats Updated to  " + $("#addFats").val() + 
+	"\nCarbs Updated to  " + $("#addCarbs").val() + 
+	"\nProtein Updated to  " + $("#addProtein").val()
 	);
   });
-  
-  
-  
 });
 </script>
 
@@ -90,9 +73,9 @@ $(document).ready(function(){
          <h1>Macroz</h1>
     <div data-role="navbar">
         <ul>
-             <li>	<a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
-             <li>	<a href="#page2" data-icon="gear" data-theme="e"> UPDATE GOALS </a></li>
-             <li>	<a href="#page3" data-icon="plus" data-theme="b"> ADD MACROZ </a></ul>
+             <li><a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
+             <li><a href="#page2" data-icon="gear" data-theme="e">UPDATE GOALS </a></li>
+             <li><a href="#page3" data-icon="plus" data-theme="b">ADD MACROZ </a></ul>
     </div>
     </header>
 	
@@ -107,7 +90,6 @@ $(document).ready(function(){
 	</div>
     <footer data-role="footer" class="ui-bar">
         	<h4> Copyright 2014 </h4>
-
     </footer>
 </div>
 
@@ -115,9 +97,22 @@ $(document).ready(function(){
 
 <script>
 $(document).ready(function(){
+
+		calNum = parseFloat($(':input[name="acho"]').val(),10),
+        fatNum = parseFloat($(':input[name="alto"]').val(),10),
+        carbNum = parseFloat($(':input[name="material"]').val(),10);
+
   $("#Update").click(function(){
-    $("#Cals").val($("#newCals"));
-	alert("Macroz updated with " + $("#newCals").val());
+	$("#Cals").val( $("#Cals").val()*1 - $("#newCals").val());
+	$("#Fats").val($("#newFats").val());
+	$("#Carbs").val($("#newCarbs").val());
+	$("#Protein").val($("#newProtein").val());
+	
+	alert("Calories Updated to  " + $("#newCals").val() + 
+	"\n\nFats Updated to  " + $("#newFats").val() + 
+	"\nCarbs Updated to  " + $("#newCarbs").val() + 
+	"\nProtein Updated to  " + $("#newProtein").val()
+	);
   });
 });
 </script>
@@ -126,9 +121,9 @@ $(document).ready(function(){
          <h1>Macroz</h1>
     <div data-role="navbar">
         <ul>
-             <li>	<a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
-             <li>	<a href="#page2" data-icon="gear" data-theme="b"> UPDATE GOALS </a></li>
-             <li>	<a href="#page3" data-icon="plus" data-theme="e"> ADD MACROZ </a></ul>
+             <li><a href="#page1" data-icon="home" data-theme="b">HOME PAGE </a></li>
+             <li><a href="#page2" data-icon="gear" data-theme="b">UPDATE GOALS </a></li>
+             <li><a href="#page3" data-icon="plus" data-theme="e">ADD MACROZ </a></ul>
     </div>
     </header>	
 	
@@ -146,7 +141,6 @@ $(document).ready(function(){
 
     </footer>
 </div>
-
 
 </body>
 </html>
