@@ -11,15 +11,26 @@
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 
-<!-- <script>
+<script>
 $(document).ready(function(){
 var g = "g";
-	$("#Cals").text("2,000");
-	$("#Fats").text("100");
-	$("#Carbs").text("50");
-	$("#Protein").text("160");
+	calsField = parseInt($('input[name="Cals"]').val());
+	startCalsField = calsField;
+    $('input[name="Cals"]').val(startCalsField);
+	
+var	fatsField = parseInt($('input[name="Fats"]').val());
+    startFatsField = fatsField;
+    $('input[name="Fats"]').val(startFatsField);
+	
+var	carbsField = parseInt($('input[name="Carbs"]').val());
+    startCarbsField = carbsField;
+    $('input[name="Carbs"]').val(startCarbsField);
+	
+var	proteinField = parseInt($('input[name="Protein"]').val());
+    startProteinField = proteinField;
+    $('input[name="Protein"]').val(startProteinField);
 });
-</script> -->
+</script>
 
 </head>
 
@@ -38,7 +49,7 @@ var g = "g";
 
 <div data-role="content"></br>
 	
-	<p>Calories: <input type="Text" name="Cals" value="2,264"></p>
+	<p>Calories: <input type="Text" name="Cals" value="2264"></p>
 	<p>Fats: <input type="Text" name="Fats" value="126g"></p>
 	<p>Carbs: <input type="Text" name="Carbs" value="113g"></p>
 	<p>Protein: <input type="Text" name="Protein" value="170g"></p>	
@@ -117,15 +128,15 @@ $(document).ready(function(){
         $('input[name="Cals"]').val(addCalsField); 
 		
 		fatsField = parseInt($('input[name="newFats"]').val());
-        addFatsField = fatsField + "g";
+        addFatsField = $('input[name="Fats"]').val() - fatsField; //fatsField + "g";
         $('input[name="Fats"]').val(addFatsField); 
 		
 		carbsField = parseInt($('input[name="newCarbs"]').val());
-        addCarbsField = carbsField + "g";
+        addCarbsField = $('input[name="Carbs"]').val() - carbsField; //carbsField + "g";
         $('input[name="Carbs"]').val(addCarbsField); 
 		
 		proteinField = parseInt($('input[name="newProtein"]').val());
-        addProteinField = proteinField + "g";
+        addProteinField = $('input[name="Protein"]').val() - proteinField; //proteinField + "g";
         $('input[name="Protein"]').val(addProteinField); 
   
 	
