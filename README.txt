@@ -9,3 +9,5 @@ Description: This calorie counter is a way to count your daily caloric intake us
 GitHub Repository:      https://github.com/Jrijo/Macroz
 
 Screenshots:
+
+[Please See Word Doc in Repo]
