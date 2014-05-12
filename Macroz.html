@@ -11,7 +11,7 @@
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 
-<script>
+<!-- <script>
 $(document).ready(function(){
 var g = "g";
 	$("#Cals").text("2,000");
@@ -19,7 +19,7 @@ var g = "g";
 	$("#Carbs").text("50");
 	$("#Protein").text("160");
 });
-</script>
+</script> -->
 
 </head>
 
@@ -54,27 +54,30 @@ var g = "g";
 
 <script>
 $(document).ready(function(){
-  $("#Add").click(function(){
+  $("#Add").click(function(){  
   
+    var calsField = parseInt($('input[name="addCals"]').val());
+        updateCalsField = calsField;
+        $('input[name="Cals"]').val(updateCalsField); 
+		
+		fatsField = parseInt($('input[name="addFats"]').val());
+        updateFatsField = fatsField + "g";
+        $('input[name="Fats"]').val(updateFatsField); 
+		
+		carbsField = parseInt($('input[name="addCarbs"]').val());
+        updateCarbsField = carbsField + "g";
+        $('input[name="Carbs"]').val(updateCarbsField); 
+		
+		proteinField = parseInt($('input[name="addProtein"]').val());
+        updateProteinField = proteinField + "g";
+        $('input[name="Protein"]').val(updateProteinField); 
   
-  
-    var firstNumber = parseInt($('input[name="addCals"]').val());
-        divided12 = firstNumber;
-        $('input[name="Cals"]').val(divided12); 
-  
-  
-  
-  
-	/*$("#Cals").val($("#addCals").val());
-	$("#Fats").val($("#addFats").val());
-	$("#Carbs").val($("#addCarbs").val());
-	$("#Protein").val($("#addProtein").val());
 	
-	alert("Calories Updated to  " + $("#addCals").val() + 
+	alert("Calories Updated to  " + $('input[name="Cals"]').val(updateCalsField) + 
 	"\n\nFats Updated to  " + $("#addFats").val() + 
 	"\nCarbs Updated to  " + $("#addCarbs").val() + 
 	"\nProtein Updated to  " + $("#addProtein").val()
-	); */
+	); 
   });
 });
 </script>
