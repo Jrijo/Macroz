@@ -38,10 +38,10 @@ var g = "g";
 
 <div data-role="content"></br>
 	
-	<p>Calories: <input type="Text" id="Cals" value="2,264"></p>
-	<p>Fats: <input type="Text" id="Fats" value="126g"></p>
-	<p>Carbs: <input type="Text" id="Carbs" value="113g"></p>
-	<p>Protein: <input type="Text" id="Protein" value="170g"></p>	
+	<p>Calories: <input type="Text" name="Cals" value="2,264"></p>
+	<p>Fats: <input type="Text" name="Fats" value="126g"></p>
+	<p>Carbs: <input type="Text" name="Carbs" value="113g"></p>
+	<p>Protein: <input type="Text" name="Protein" value="170g"></p>	
 
 </div>
 
@@ -55,7 +55,17 @@ var g = "g";
 <script>
 $(document).ready(function(){
   $("#Add").click(function(){
-	$("#Cals").val($("#addCals").val());
+  
+  
+  
+    var firstNumber = parseInt($('input[name="addCals"]').val());
+        divided12 = firstNumber;
+        $('input[name="Cals"]').val(divided12); 
+  
+  
+  
+  
+	/*$("#Cals").val($("#addCals").val());
 	$("#Fats").val($("#addFats").val());
 	$("#Carbs").val($("#addCarbs").val());
 	$("#Protein").val($("#addProtein").val());
@@ -64,7 +74,7 @@ $(document).ready(function(){
 	"\n\nFats Updated to  " + $("#addFats").val() + 
 	"\nCarbs Updated to  " + $("#addCarbs").val() + 
 	"\nProtein Updated to  " + $("#addProtein").val()
-	);
+	); */
   });
 });
 </script>
@@ -80,10 +90,10 @@ $(document).ready(function(){
     </header>
 	
     <div data-role="content"></br>
-	<p>Calories: <input type="text" id="addCals"></p>
-	<p>Fats: <input type="text" id="addFats"></p>
-	<p>Carbs: <input type="text" id="addCarbs"></p>
-	<p>Protein: <input type="text" id="addProtein"></p>
+	<p>Calories: <input type="text" name="addCals"></p>
+	<p>Fats: <input type="text" name="addFats"></p>
+	<p>Carbs: <input type="text" name="addCarbs"></p>
+	<p>Protein: <input type="text" name="addProtein"></p>
 
 	<button id="Add"> Add Macroz </button>
 
@@ -128,10 +138,10 @@ $(document).ready(function(){
     </header>	
 	
     <div data-role="content"></br>
-	<p>Calories: <input type="text" id="newCals"></p>
-	<p>Fats: <input type="text" id="newFats"></p>
-	<p>Carbs: <input type="text" id="newCarbs"></p>
-	<p>Protein: <input type="text" id="newProtein"></p>
+	<p>Calories: <input type="text" name="newCals"></p>
+	<p>Fats: <input type="text" name="newFats"></p>
+	<p>Carbs: <input type="text" name="newCarbs"></p>
+	<p>Protein: <input type="text" name="newProtein"></p>
 
 	<button id="Update"> Update Goals </button>
 
