@@ -34,6 +34,35 @@ var	proteinField = parseInt($('input[name="Protein"]').val());
 function vibrate() {
         navigator.notification.vibrate(2000);
     }
+	
+	
+function geolocation(){
+	var options = { enableHighAccurac: true };
+		watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+		
+	function onSuccess(position){
+		var lat = position.coords.latitude;
+		var lng = position.coords.longitude;
+		
+		localStorage.setItem("latitude", lat);
+		localStorage.setItem("longitude", lng);
+	
+		//alert("lat: " + lat + "long: " + lng);
+		
+		var div "";
+			div = document.getElementById('wrapper');
+
+		div.innerHTML = div.innerHTML + 
+		"\nYour current Geolocation is </br></br> Latitude: " + lat + "</br>Longitude: " + lng;
+	}
+	
+	function onError(error){
+		alert("Message: " + error.message);
+		localStorage.setItem("message", error.message);
+	}
+
+}	
+	
 
 </script>
 
@@ -58,6 +87,8 @@ function vibrate() {
 	<p>Fats: <input type="Text" name="Fats" value="44g"></p>
 	<p>Carbs: <input type="Text" name="Carbs" value="250g"></p>
 	<p>Protein: <input type="Text" name="Protein" value="150g"></p>	
+	<div id="wrapper">
+	</div>
 
 </div>
 
@@ -94,8 +125,15 @@ $(document).ready(function(){
 	"\nCarbs Updated to  " + $('input[name="Carbs"]').val() + 
 	"\nProtein Updated to  " + $('input[name="Protein"]').val()
 	); 
+	
+	function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+	
   });
 });
+
+
 </script>
 
     <header data-role="header">
@@ -113,8 +151,9 @@ $(document).ready(function(){
 	<p>Fats: <input type="text" name="addFats"></p>
 	<p>Carbs: <input type="text" name="addCarbs"></p>
 	<p>Protein: <input type="text" name="addProtein"></p>
-
-	<button id="Update" onclick="vibrate(); return false;"> Update Goals </button>
+	<div id="wrapper">
+	</div>
+	<button id="Update" onClick="geolocation()"> Update Goals </button>
 
 	</div>
     <footer data-role="footer" class="ui-bar">
@@ -149,7 +188,12 @@ $(document).ready(function(){
 	"\n\nFats Updated to  " + $('input[name="Fats"]').val() + 
 	"\nCarbs Updated to  " + $('input[name="Carbs"]').val() + 
 	"\nProtein Updated to  " + $('input[name="Protein"]').val()
-	); 
+	);
+
+function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+	
   });
 });
 </script>
@@ -169,8 +213,10 @@ $(document).ready(function(){
 	<p>Fats: <input type="text" name="newFats"></p>
 	<p>Carbs: <input type="text" name="newCarbs"></p>
 	<p>Protein: <input type="text" name="newProtein"></p>
+	<div id="wrapper">
+	</div>
 
-	<button id="Add" onclick="vibrate(); return false;"> Add Macroz </button>
+	<button id="Add" onClick="geolocation()"> Add Macroz </button>
 
 	</div>
     <footer data-role="footer" class="ui-bar">
