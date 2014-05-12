@@ -54,7 +54,7 @@ var g = "g";
 
 <script>
 $(document).ready(function(){
-  $("#Add").click(function(){  
+  $("#Update").click(function(){  
   
     var calsField = parseInt($('input[name="addCals"]').val());
         updateCalsField = calsField;
@@ -98,7 +98,7 @@ $(document).ready(function(){
 	<p>Carbs: <input type="text" name="addCarbs"></p>
 	<p>Protein: <input type="text" name="addProtein"></p>
 
-	<button id="Add"> Add Macroz </button>
+	<button id="Update"> Update Goals </button>
 
 	</div>
     <footer data-role="footer" class="ui-bar">
@@ -110,22 +110,30 @@ $(document).ready(function(){
 
 <script>
 $(document).ready(function(){
-
-		calNum = parseFloat($(':input[name="acho"]').val(),10),
-        fatNum = parseFloat($(':input[name="alto"]').val(),10),
-        carbNum = parseFloat($(':input[name="material"]').val(),10);
-
-  $("#Update").click(function(){
-	$("#Cals").val( $("#Cals").val()*1 - $("#newCals").val());
-	$("#Fats").val($("#newFats").val());
-	$("#Carbs").val($("#newCarbs").val());
-	$("#Protein").val($("#newProtein").val());
+  $("#Add").click(function(){  
+  
+    var calsField = parseInt($('input[name="newCals"]').val());
+        addCalsField = $('input[name="Cals"]').val() - calsField;
+        $('input[name="Cals"]').val(addCalsField); 
+		
+		fatsField = parseInt($('input[name="newFats"]').val());
+        addFatsField = fatsField + "g";
+        $('input[name="Fats"]').val(addFatsField); 
+		
+		carbsField = parseInt($('input[name="newCarbs"]').val());
+        addCarbsField = carbsField + "g";
+        $('input[name="Carbs"]').val(addCarbsField); 
+		
+		proteinField = parseInt($('input[name="newProtein"]').val());
+        addProteinField = proteinField + "g";
+        $('input[name="Protein"]').val(addProteinField); 
+  
 	
-	alert("Calories Updated to  " + $("#newCals").val() + 
-	"\n\nFats Updated to  " + $("#newFats").val() + 
-	"\nCarbs Updated to  " + $("#newCarbs").val() + 
-	"\nProtein Updated to  " + $("#newProtein").val()
-	);
+	alert("Calories Updated to  " + $('input[name="Cals"]').val() + 
+	"\n\nFats Updated to  " + $('input[name="Fats"]').val() + 
+	"\nCarbs Updated to  " + $('input[name="Carbs"]').val() + 
+	"\nProtein Updated to  " + $('input[name="Protein"]').val()
+	); 
   });
 });
 </script>
@@ -146,7 +154,7 @@ $(document).ready(function(){
 	<p>Carbs: <input type="text" name="newCarbs"></p>
 	<p>Protein: <input type="text" name="newProtein"></p>
 
-	<button id="Update"> Update Goals </button>
+	<button id="Add"> Add Macroz </button>
 
 	</div>
     <footer data-role="footer" class="ui-bar">
