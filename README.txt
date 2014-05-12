@@ -11,3 +11,5 @@ GitHub Repository:      https://github.com/Jrijo/Macroz
 Screenshots:
 
 [Please See Word Doc in Repo]
+
+Link to Google Play Store: https://play.google.com/store/apps/details?id=com.njit.Macroz
